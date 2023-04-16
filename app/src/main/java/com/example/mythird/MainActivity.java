@@ -68,22 +68,8 @@ public class MainActivity extends AppCompatActivity {
                         });
                 AlertDialog alert = builder.create();
                 alert.show();
-
             }
-
-
-
         });
-
-
     }
-
-
-
-
-
-
-
-
 }
 
