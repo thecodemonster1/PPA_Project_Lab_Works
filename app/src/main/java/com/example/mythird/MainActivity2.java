@@ -26,13 +26,14 @@ public class MainActivity2 extends AppCompatActivity {
         num2txt  = findViewById(R.id.num2);
 
         Intent intent = getIntent();
-        int new_num1 = intent.getIntExtra(MainActivity.Number1_Passed, 0);
-        int new_num2 = intent.getIntExtra(MainActivity.Number2_Passed, 0);
-//        int num1 = Integer.parseInt(intent.getStringExtra(MainActivity.Number1_Passed));
-//        int num2 = Integer.parseInt(intent.getStringExtra(MainActivity.Number2_Passed));
 
-        num1txt.setText(""+new_num1);
-        num2txt.setText(""+new_num2);
+
+        int new_num1 = intent.getIntExtra(MainActivity.number1, 0);
+        int new_num2 = intent.getIntExtra(MainActivity.number2, 0);
+
+
+        num1txt.setText(Integer.toString(new_num1));
+        num2txt.setText(Integer.toString(new_num2));
 
     }
 }

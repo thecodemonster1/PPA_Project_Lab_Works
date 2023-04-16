@@ -15,19 +15,20 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText_Number1;
     private EditText editText_Number2;
     private AlertDialog.Builder builder;
-    public static final String Number1_Passed = "number1";
-    public static final String Number2_Passed = "number2";
+    public static final String number1 = "number1";
+    public static final String number2 = "number2";
 
 
-//    @SuppressLint("MissingInflatedId")
+
+    //    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Attach with UI elements
         btn_Enter = (Button) findViewById(R.id.btn_Enter);
-        editText_Number1 = (EditText) findViewById(R.id.editText_Number1);
-        editText_Number2 = (EditText) findViewById(R.id.editText_Number2);
+        editText_Number1 = findViewById(R.id.editText_Number1);
+        editText_Number2 = findViewById(R.id.editText_Number2);
         builder = new AlertDialog.Builder(this);
     }
 
@@ -54,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                                intent.putExtra("Number1_Passed", number1);
-                                intent.putExtra("Number2_Passed", number2);
+                                intent.putExtra("number1", number1);
+                                intent.putExtra("number2", number2);
                                 startActivity(intent);
                             }
                         })
