@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
     private Button add;
@@ -18,6 +19,9 @@ public class MainActivity2 extends AppCompatActivity {
     private TextView num1txt;
     private TextView num2txt;
     private TextView answer;
+    private static int new_num1;
+    private static int new_num2;
+    private static int finalAns;
 
 
     @Override
@@ -37,6 +41,9 @@ public class MainActivity2 extends AppCompatActivity {
         int new_num1 = intent.getIntExtra(MainActivity.number1, 0);
         int new_num2 = intent.getIntExtra(MainActivity.number2, 0);
 
+        this.new_num1 = new_num1;
+        this.new_num2 = new_num2;
+
         num1txt.setText(Integer.toString(new_num1));
         num2txt.setText(Integer.toString(new_num2));
 
@@ -50,37 +57,41 @@ public class MainActivity2 extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                int new_num1 = Integer.parseInt(num1txt.getText().toString());
-                int new_num2 = Integer.parseInt(num2txt.getText().toString());
-                answer.setText("Hello");
+                Toast.makeText(MainActivity2.this, "+ Button is clicked!", Toast.LENGTH_SHORT).show();
+                finalAns = new_num1+ new_num2;
             }
         });
 
         sub.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
+                Toast.makeText(MainActivity2.this, "- Button is clicked!", Toast.LENGTH_SHORT).show();
+                finalAns = new_num1 - new_num2;
             }
         });
 
         mul.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
+                Toast.makeText(MainActivity2.this, "* Button is clicked!", Toast.LENGTH_SHORT).show();
+                finalAns = new_num1 * new_num2;
             }
         });
 
         div.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
+                Toast.makeText(MainActivity2.this, "/ Button is clicked!", Toast.LENGTH_SHORT).show();
+                finalAns = new_num1 / new_num2;
             }
         });
 
-        add.setOnClickListener(new View.OnClickListener(){
+        result.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
-
+            public void onClick(View view) {
+                // Define code to perform when button is clicked
+//                Toast.makeText(MainActivity2.this, "= Button is clicked!", Toast.LENGTH_SHORT).show();
+                answer.setText(""+ finalAns);
             }
         });
     }

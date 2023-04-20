@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         btn_Enter.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                int number1 = Integer.parseInt(editText_Number1.getText().toString());
-                int number2 = Integer.parseInt(editText_Number2.getText().toString());
+                int number1 = Integer.parseInt(editText_Number1.getText().toString()); //.toString()
+                int number2 = Integer.parseInt(editText_Number2.getText().toString()); //.toString()
 
 //                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
 //                intent.putExtra("Number1_Passed", number1);
