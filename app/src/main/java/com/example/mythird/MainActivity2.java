@@ -28,6 +28,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        // Button variables
         num1txt = findViewById(R.id.num1);
         num2txt = findViewById(R.id.num2);
         add = findViewById(R.id.add);
@@ -35,15 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
         mul = findViewById(R.id.mul);
         div = findViewById(R.id.div);
 
-//        Intent intent = getIntent();
-//        int new_num1 = intent.getIntExtra(MainActivity.number1, 0);
-//        int new_num2 = intent.getIntExtra(MainActivity.number2, 0);
-//
-//        this.new_num1 = new_num1;
-//        this.new_num2 = new_num2;
-//
-//        num1txt.setText(Integer.toString(new_num1));
-//        num2txt.setText(Integer.toString(new_num2));
+//        All other variables want to become inside the onResume funciton Not inside the onCreate function
 
     }
 
@@ -51,17 +44,19 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
 
+        // Other Variables
         Intent intent = getIntent();
         int new_num1 = intent.getIntExtra(MainActivity.number1, 0);
         int new_num2 = intent.getIntExtra(MainActivity.number2, 0);
 
-//        this.new_num1 = new_num1;
-//        this.new_num2 = new_num2;
-
+        // Displaying Numbers... (num1 and num2)
         num1txt.setText(Integer.toString(new_num1));
         num2txt.setText(Integer.toString(new_num2));
 
+        // ID of answer TextView field
         answer = findViewById(R.id.Answer);
+
+        // OnClick Method of Addition Button
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -71,6 +66,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        // OnClick Method of Subtraction Button
         sub.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -80,6 +76,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        // OnClick Method of Multipliction Button
         mul.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -89,6 +86,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        // OnClick Method of Divition Button
         div.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
