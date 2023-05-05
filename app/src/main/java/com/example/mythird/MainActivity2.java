@@ -36,7 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
         mul = findViewById(R.id.mul);
         div = findViewById(R.id.div);
 
-//        All other variables want to become inside the onResume funciton Not inside the onCreate function
+//        All other variables want to become inside the onResume funciton || Not inside the onCreate function
 
     }
 
@@ -61,7 +61,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Toast.makeText(MainActivity2.this, "+ Button is clicked!", Toast.LENGTH_SHORT).show();
-                finalAns = new_num1+ new_num2;
+                finalAns = new_num1 + new_num2;
                 answer.setText(""+ finalAns);
             }
         });
